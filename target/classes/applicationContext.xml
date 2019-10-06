@@ -20,7 +20,7 @@
 <!--    <import resource="classpath:applicationContext-action.xml"/>-->
 
     <!--  2、sessionFactory  -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <!-- 2.1管理数据库链接 -->
         <property name="dataSource" ref="dataSource_db"/>
 
@@ -56,7 +56,7 @@
 
     <!--  0、配置事务  -->
     <!--  what:增强事务  -->
-    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <!--  when:什么时候  -->
