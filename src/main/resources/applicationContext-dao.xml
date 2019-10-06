@@ -19,6 +19,10 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!--  employeeDAO  -->
+    <bean id="employeeDAO" class="com.revanwang.wms.dao.impl.EmployeeDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>
 

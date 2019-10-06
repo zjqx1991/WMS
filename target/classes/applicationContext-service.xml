@@ -18,7 +18,11 @@
     <bean id="departmentService" class="com.revanwang.wms.service.impl.DepartmentServiceImpl">
         <property name="departmentDAO" ref="departmentDAO"/>
     </bean>
-    
+
+    <!--  employeeService  -->
+    <bean id="employeeService" class="com.revanwang.wms.service.impl.EmployeeServiceImpl">
+        <property name="employeeDAO" ref="employeeDAO"/>
+    </bean>
 
 </beans>
 

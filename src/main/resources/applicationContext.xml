@@ -27,7 +27,7 @@
         <!-- 2.2设置Hibernate -->
         <property name="hibernateProperties">
             <value>
-                hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+                hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
                 hibernate.show_sql=true
                 hibernate.format_sql=true
                 hibernate.enable_lazy_load_no_trans=true

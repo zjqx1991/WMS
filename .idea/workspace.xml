@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Test/EmployeeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IEmployeeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/EmployeeDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Employee.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/DepartmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/DepartmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-service.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +57,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -59,7 +71,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain" />
     </key>
@@ -76,51 +92,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DepartmentTest.getListTest">
-    <configuration name="DepartmentTest.getDepartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EmployeeTest.getListTest">
+    <configuration name="EmployeeTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="METHOD_NAME" value="deleteTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.getDepartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WMS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="getDepartTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentTest.getListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.getListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="getListTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentTest.getTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
-      <option name="METHOD_NAME" value="getTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WMS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="saveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentTest.updateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.updateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="updateTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -129,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentTest.getListTest" />
-        <item itemvalue="JUnit.DepartmentTest.getDepartTest" />
-        <item itemvalue="JUnit.DepartmentTest.getTest" />
-        <item itemvalue="JUnit.DepartmentTest.updateTest" />
-        <item itemvalue="JUnit.DepartmentTest.saveTest" />
+        <item itemvalue="JUnit.EmployeeTest.getListTest" />
+        <item itemvalue="JUnit.EmployeeTest.getDepartTest" />
+        <item itemvalue="JUnit.EmployeeTest.updateTest" />
+        <item itemvalue="JUnit.EmployeeTest.deleteTest" />
+        <item itemvalue="JUnit.EmployeeTest.saveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570353389375</updated>
-      <workItem from="1570353391353" duration="15106000" />
+      <workItem from="1570353391353" duration="19841000" />
     </task>
     <servers />
   </component>

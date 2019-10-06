@@ -18,8 +18,8 @@ public class DepartmentTest {
     @Test
     public void saveTest() {
         Department department = new Department();
-        department.setName("乔峰");
-        department.setSn("qf001");
+        department.setName("市场部");
+        department.setSn("market");
         this.departmentService.save(department);
     }
 
