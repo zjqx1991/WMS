@@ -2,6 +2,7 @@ package com.revanwang.wms.web.action;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Preparable;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.service.IDepartmentService;
@@ -11,7 +12,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-public class EmployeeAction extends ActionSupport {
+public class EmployeeAction extends ActionSupport implements Preparable {
 
     private final String LIST = "list";
 
@@ -48,6 +49,7 @@ public class EmployeeAction extends ActionSupport {
 
 
     public String saveOrUpdate() {
+        System.out.println("EmployeeAction.saveOrUpdate: + " + this.employee);
         Long id = this.employee.getId();
         if (id == null) {
             //新增
@@ -56,7 +58,6 @@ public class EmployeeAction extends ActionSupport {
             //编辑
             this.employeeService.update(this.employee);
         }
-        System.out.println("EmployeeAction.saveOrUpdate: + " + this.employee);
         return SUCCESS;
     }
 
@@ -67,6 +68,28 @@ public class EmployeeAction extends ActionSupport {
             this.employeeService.delete(employeeId);
         }
         return SUCCESS;
+    }
+
+    /**
+     * 拦截所有的方法
+     * @throws Exception
+     */
+    @Override
+    public void prepare() throws Exception {
+        System.out.println("EmployeeAction.prepare");
+    }
+
+    /**
+     * 拦截 saveOrUpdate方法
+     * @throws Exception
+     */
+    public void prepareSaveOrUpdate() throws Exception {
+        System.out.println("EmployeeAction.prepareSaveOrUpdate: " + this.employee);
+        Long empId = this.employee.getId();
+        if (empId != null) {
+            //获取数据库数据
+            this.employee = this.employeeService.get(empId);
+        }
     }
 
 }
