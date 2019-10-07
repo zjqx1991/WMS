@@ -1,7 +1,5 @@
 package com.revanwang.wms.web.action;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.service.IDepartmentService;
 import lombok.Getter;
@@ -9,9 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-public class DepartmentAction extends ActionSupport {
-
-    private final String LIST = "list";
+public class DepartmentAction extends BaseAction {
 
     @Setter
     private IDepartmentService departmentService;
@@ -22,7 +18,7 @@ public class DepartmentAction extends ActionSupport {
     public String execute() throws Exception {
         System.out.println("DepartmentAction.execute");
         List<Department> departmentList = this.departmentService.getList();
-        ActionContext.getContext().put("department", departmentList);
+        ActionContextPut("department", departmentList);
         return LIST;
     }
 

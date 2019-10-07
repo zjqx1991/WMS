@@ -1,8 +1,5 @@
 package com.revanwang.wms.web.action;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.Preparable;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.service.IDepartmentService;
@@ -12,9 +9,8 @@ import lombok.Setter;
 
 import java.util.List;
 
-public class EmployeeAction extends ActionSupport implements Preparable {
+public class EmployeeAction extends BaseAction {
 
-    private final String LIST = "list";
 
     @Setter
     private IEmployeeService employeeService;
@@ -29,7 +25,7 @@ public class EmployeeAction extends ActionSupport implements Preparable {
     @Override
     public String execute() throws Exception {
         List<Employee> employees = this.employeeService.getList();
-        ActionContext.getContext().put("employees", employees);
+        ActionContextPut("employees", employees);
         return LIST;
     }
 
@@ -37,7 +33,7 @@ public class EmployeeAction extends ActionSupport implements Preparable {
     @Override
     public String input() throws Exception {
         List<Department> departments = this.departmentService.getList();
-        ActionContext.getContext().put("depts", departments);
+        ActionContextPut("depts", departments);
 
         Long employeeId = this.employee.getId();
         if (employeeId != null) {
@@ -70,14 +66,6 @@ public class EmployeeAction extends ActionSupport implements Preparable {
         return SUCCESS;
     }
 
-    /**
-     * 拦截所有的方法
-     * @throws Exception
-     */
-    @Override
-    public void prepare() throws Exception {
-        System.out.println("EmployeeAction.prepare");
-    }
 
     /**
      * 拦截 saveOrUpdate方法
