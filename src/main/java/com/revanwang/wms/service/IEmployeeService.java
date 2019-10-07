@@ -2,6 +2,7 @@ package com.revanwang.wms.service;
 
 
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.query.EmployeeQueryObject;
 
 import java.util.List;
 
@@ -36,4 +37,13 @@ public interface IEmployeeService {
      * @return 返回所有的员工
      */
     List<Employee> getList();
+
+
+    /**
+     * 高级查询
+     * @param qo    查询对象
+     * @return
+     */
+    List<Employee> query(EmployeeQueryObject qo);
+
 }

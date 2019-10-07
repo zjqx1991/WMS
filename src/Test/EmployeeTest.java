@@ -1,5 +1,6 @@
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.query.EmployeeQueryObject;
 import com.revanwang.wms.service.IDepartmentService;
 import com.revanwang.wms.service.IEmployeeService;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class EmployeeTest {
 
     @Test
     public void saveTest() {
-        Department depart = this.departmentService.get(1L);
+        Department depart = this.departmentService.get(4L);
         Employee emp = new Employee();
         emp.setName("段誉");
         emp.setAge(80);
@@ -63,6 +64,19 @@ public class EmployeeTest {
         List<Employee> list = this.employeeService.getList();
         for (Employee emp:list) {
             System.out.println("EmployeeTest.getListTest：" + emp);
+        }
+    }
+
+
+    @Test
+    public void queryTest() {
+        EmployeeQueryObject qo = new EmployeeQueryObject();
+//        qo.setDepartId(4L);
+        qo.setKeyword("xuzhu");
+        List<Employee> employeeList = this.employeeService.query(qo);
+
+        for (Employee emp : employeeList) {
+            System.out.println("EmployeeTest.queryTest:==" + emp);
         }
     }
 

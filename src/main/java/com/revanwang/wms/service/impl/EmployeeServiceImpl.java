@@ -2,6 +2,7 @@ package com.revanwang.wms.service.impl;
 
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.query.EmployeeQueryObject;
 import com.revanwang.wms.service.IEmployeeService;
 import lombok.Setter;
 
@@ -36,5 +37,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public List<Employee> getList() {
         return this.employeeDAO.getList();
+    }
+
+    @Override
+    public List<Employee> query(EmployeeQueryObject qo) {
+        return this.employeeDAO.query(qo);
     }
 }
