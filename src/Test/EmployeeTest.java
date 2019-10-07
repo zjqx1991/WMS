@@ -22,12 +22,12 @@ public class EmployeeTest {
 
     @Test
     public void saveTest() {
-        Department depart = this.departmentService.get(3L);
+        Department depart = this.departmentService.get(4L);
         Employee emp = new Employee();
-        emp.setName("乔峰");
-        emp.setAge(99);
-        emp.setEmail("qf@163.com");
-        emp.setPassword("qiaofeng");
+        emp.setName("段誉");
+        emp.setAge(80);
+        emp.setEmail("duanyu@163.com");
+        emp.setPassword("duanyu");
         emp.setDepartment(depart);
 
         this.employeeService.save(emp);

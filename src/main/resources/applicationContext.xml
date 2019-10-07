@@ -17,7 +17,7 @@
     <!-- 包含dao、service、action的配置文件 -->
     <import resource="classpath:applicationContext-dao.xml"/>
     <import resource="classpath:applicationContext-service.xml"/>
-<!--    <import resource="classpath:applicationContext-action.xml"/>-->
+    <import resource="classpath:applicationContext-action.xml"/>
 
     <!--  2、sessionFactory  -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

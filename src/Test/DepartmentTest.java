@@ -17,10 +17,12 @@ public class DepartmentTest {
 
     @Test
     public void saveTest() {
-        Department department = new Department();
-        department.setName("市场部");
-        department.setSn("market");
-        this.departmentService.save(department);
+        for (int i = 0; i < 3; i++) {
+            Department department = new Department();
+            department.setName("市场部");
+            department.setSn("market");
+            this.departmentService.save(department);
+        }
     }
 
 
@@ -33,8 +35,8 @@ public class DepartmentTest {
     public void updateTest() {
         Department department = new Department();
         department.setId(3L);
-        department.setName("虚竹");
-        department.setSn("xz001");
+        department.setName("财务部");
+        department.setSn("Accounting");
         this.departmentService.update(department);
     }
 
