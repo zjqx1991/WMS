@@ -14,6 +14,7 @@ public class Employee {
     private String      password;
     private String      email;
     private Integer     age;
+    private boolean     admin;
     private Department  department;
 
 }

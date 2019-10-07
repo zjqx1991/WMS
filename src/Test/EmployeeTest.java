@@ -22,7 +22,7 @@ public class EmployeeTest {
 
     @Test
     public void saveTest() {
-        Department depart = this.departmentService.get(4L);
+        Department depart = this.departmentService.get(1L);
         Employee emp = new Employee();
         emp.setName("段誉");
         emp.setAge(80);

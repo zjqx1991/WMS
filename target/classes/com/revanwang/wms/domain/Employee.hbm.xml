@@ -14,6 +14,7 @@
         <property name="password"/>
         <property name="email"/>
         <property name="age"/>
+        <property name="admin"/>
         <many-to-one name="department" column="depart_id"/>
 
     </class>
