@@ -1,5 +1,6 @@
 package com.revanwang.wms.web.action;
 
+import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.query.DepartmentQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
@@ -18,6 +19,7 @@ public class DepartmentAction extends BaseAction {
     private DepartmentQueryObject qo = new DepartmentQueryObject();
 
     @Override
+    @RequiredPermission("部门列表")
     public String execute() throws Exception {
         System.out.println("DepartmentAction.execute");
         QueryResultObject resultObject = this.departmentService.query(qo);
@@ -27,6 +29,7 @@ public class DepartmentAction extends BaseAction {
 
 
     @Override
+    @RequiredPermission("编辑部门")
     public String input() throws Exception {
         Long departId = this.department.getId();
         if (departId != null) {
@@ -44,6 +47,7 @@ public class DepartmentAction extends BaseAction {
     /**
      * 保存和更新
      */
+    @RequiredPermission("保存或更新部门")
     public String saveOrUpdate() {
         Long departId = this.department.getId();
         if (departId == null) {
@@ -57,6 +61,7 @@ public class DepartmentAction extends BaseAction {
         return SUCCESS;
     }
 
+    @RequiredPermission("删除部门")
     public String delete() {
         Long departId = this.department.getId();
         if (departId != null) {

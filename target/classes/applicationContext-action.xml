@@ -29,5 +29,11 @@
         <property name="departmentService" ref="departmentService"/>
     </bean>
 
+
+    <!--  permissionAction  -->
+    <bean id="permissionAction" class="com.revanwang.wms.web.action.PermissionAction" scope="prototype">
+        <property name="permissionService" ref="permissService"/>
+    </bean>
+
 </beans>
 

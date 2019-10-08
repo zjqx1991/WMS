@@ -31,6 +31,7 @@ public class EmployeeAction extends BaseAction {
 
 
     @Override
+    @RequiredPermission("员工列表")
     public String execute() throws Exception {
         QueryResultObject resultObject = this.employeeService.query(this.qo);
         List<Department> departments = this.departmentService.getList();
@@ -39,8 +40,8 @@ public class EmployeeAction extends BaseAction {
         return LIST;
     }
 
-
     @Override
+    @RequiredPermission("编辑员工")
     public String input() throws Exception {
         List<Department> departments = this.departmentService.getList();
         ActionContextPut("depts", departments);
@@ -54,6 +55,7 @@ public class EmployeeAction extends BaseAction {
     }
 
 
+    @RequiredPermission("保存或更新员工")
     public String saveOrUpdate() {
         System.out.println("EmployeeAction.saveOrUpdate: + " + this.employee);
         Long id = this.employee.getId();

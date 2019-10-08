@@ -14,15 +14,18 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!--  departmentDAO  -->
-    <bean id="departmentDAO" class="com.revanwang.wms.dao.impl.DepartmentDAOImpl">
+
+    <bean id="baseDAO" abstract="true">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <!--  departmentDAO  -->
+    <bean id="departmentDAO" class="com.revanwang.wms.dao.impl.DepartmentDAOImpl" parent="baseDAO"/>
 
     <!--  employeeDAO  -->
-    <bean id="employeeDAO" class="com.revanwang.wms.dao.impl.EmployeeDAOImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    <bean id="employeeDAO" class="com.revanwang.wms.dao.impl.EmployeeDAOImpl" parent="baseDAO"/>
 
+    <!--  permissionDAO  -->
+    <bean id="permissionDAO" class="com.revanwang.wms.dao.impl.PermissionDAOImpl" parent="baseDAO"/>
 </beans>
 
