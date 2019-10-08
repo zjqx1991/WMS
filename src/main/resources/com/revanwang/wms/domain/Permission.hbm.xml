@@ -5,13 +5,13 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.revanwang.wms.domain">
 
-    <class name="Department" table="t_department">
+    <class name="Permission" table="t_permission">
         <id name="id">
             <generator class="native"></generator>
         </id>
 
         <property name="name"/>
-        <property name="sn"/>
+        <property name="expression"/>
     </class>
 
 </hibernate-mapping>

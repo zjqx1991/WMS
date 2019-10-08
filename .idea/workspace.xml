@@ -7,21 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/utils/RevanMapUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/DepartmentQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/BaseDomain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Permission.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Role.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/EmployeeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IGenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IGenericDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/GenericDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/GenericDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/PageResultObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/QueryResultObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IDepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IDepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/DepartmentAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/DepartmentAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/department/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/department/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/department/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/domain/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Department.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Department.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Employee.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain/Employee.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revanwang/wms/domain/Department.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revanwang/wms/domain/Department.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revanwang/wms/domain/Employee.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revanwang/wms/domain/Employee.hbm.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -87,11 +85,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/revanwang/wms/domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -114,12 +112,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeeTest.queryObjectTestt">
-    <configuration name="EmployeeTest.pageQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EmployeeTest.saveTest">
+    <configuration name="DepartmentTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="pageQueryTest" />
+      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
+      <option name="METHOD_NAME" value="saveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +153,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeTest.queryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
-      <option name="METHOD_NAME" value="queryTest" />
+      <option name="METHOD_NAME" value="saveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -370,19 +368,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat7" />
-      <item itemvalue="JUnit.EmployeeTest.queryTest" />
-      <item itemvalue="JUnit.EmployeeTest.pageQueryTest" />
       <item itemvalue="JUnit.EmployeeTest.queryListTest" />
       <item itemvalue="JUnit.EmployeeTest.queryList1Test" />
       <item itemvalue="JUnit.EmployeeTest.queryObjectTestt" />
+      <item itemvalue="JUnit.EmployeeTest.saveTest" />
+      <item itemvalue="JUnit.DepartmentTest.saveTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmployeeTest.saveTest" />
+        <item itemvalue="JUnit.DepartmentTest.saveTest" />
         <item itemvalue="JUnit.EmployeeTest.queryObjectTestt" />
         <item itemvalue="JUnit.EmployeeTest.queryList1Test" />
         <item itemvalue="JUnit.EmployeeTest.queryListTest" />
-        <item itemvalue="JUnit.EmployeeTest.pageQueryTest" />
-        <item itemvalue="JUnit.EmployeeTest.queryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +400,7 @@
       <workItem from="1570415244085" duration="251000" />
       <workItem from="1570415526328" duration="506000" />
       <workItem from="1570427372241" duration="721000" />
-      <workItem from="1570428119280" duration="48456000" />
+      <workItem from="1570428119280" duration="50750000" />
     </task>
     <servers />
   </component>

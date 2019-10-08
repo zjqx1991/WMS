@@ -28,7 +28,7 @@ public class EmployeeTest {
     @Test
     public void saveTest() {
         for (int i = 0; i < 20; i++) {
-            Department depart = this.departmentService.get(5L);
+            Department depart = this.departmentService.get(1L);
             Employee emp = new Employee();
             emp.setName("test__" + i);
             emp.setAge(50 + i);

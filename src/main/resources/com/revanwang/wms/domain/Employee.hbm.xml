@@ -5,7 +5,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.revanwang.wms.domain">
 
-    <class name="Employee">
+    <class name="Employee" table="t_employee">
         <id name="id">
             <generator class="native"></generator>
         </id>
@@ -16,6 +16,12 @@
         <property name="age"/>
         <property name="admin"/>
         <many-to-one name="department" column="depart_id"/>
+
+        <!-- 员工所拥有的角色 -->
+        <bag name="roles" table="t_employee_role">
+            <key column="employee_id"/>
+            <many-to-many class="Role" column="role_id"/>
+        </bag>
 
     </class>
 
