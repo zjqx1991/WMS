@@ -47,14 +47,4 @@ public interface IEmployeeService {
      */
     PageResultObject query(EmployeeQueryObject qo);
 
-
-
-    /**
-     * 分页查询
-     * @param currentPage   当前页
-     * @param pageSize      个数
-     * @return
-     */
-    PageResultObject query(Integer currentPage, Integer pageSize);
-
 }

@@ -1,5 +1,8 @@
 package com.revanwang.wms.dao;
 
+import com.revanwang.wms.query.AbstractQueryObject;
+import com.revanwang.wms.query.PageResultObject;
+
 import java.util.List;
 
 public interface IGenericDAO<T> {
@@ -33,4 +36,11 @@ public interface IGenericDAO<T> {
      * @return 返回所有的数据
      */
     List<T> getList();
+
+    /**
+     * 高级查询 + 分页查询
+     * @param qo    查询对象
+     * @return
+     */
+    PageResultObject query(AbstractQueryObject qo);
 }

@@ -14,10 +14,6 @@ public class EmployeeQueryObject extends AbstractQueryObject {
     private String  keyword;
     @Setter @Getter
     private Long    departId = -1L;
-    @Setter @Getter
-    private Integer currentPage = 1;
-    @Setter @Getter
-    private Integer pageSize = 5;
 
     /**
      * 高级查询条件
@@ -51,8 +47,6 @@ public class EmployeeQueryObject extends AbstractQueryObject {
         return "EmployeeQueryObject{" +
                 "keyword='" + keyword + '\'' +
                 ", departId=" + departId +
-                ", currentPage=" + currentPage +
-                ", pageSize=" + pageSize +
                 '}';
     }
 }

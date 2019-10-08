@@ -45,10 +45,4 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return this.employeeDAO.query(qo);
     }
 
-    @Override
-    public PageResultObject query(Integer currentPage, Integer pageSize) {
-        return this.employeeDAO.query(currentPage, pageSize);
-    }
-
-
 }

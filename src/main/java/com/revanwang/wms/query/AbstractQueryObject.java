@@ -1,11 +1,20 @@
 package com.revanwang.wms.query;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.*;
 
 /**
  * 封装了 查询条件
  */
 abstract public class AbstractQueryObject {
+
+    @Setter
+    @Getter
+    private Integer currentPage = 1;
+    @Setter @Getter
+    private Integer pageSize = 5;
 
     //查询条件
     private List<String> conditionList = new ArrayList<>();

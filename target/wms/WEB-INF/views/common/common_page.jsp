@@ -19,7 +19,7 @@
 		<input type="button" value="尾页" class="ui_input_btn01 page_btn" data-page="${pageResult.totalPage}"/>
 		
 		<!--     如果是最后一页，则只显示首页、上一页 -->
-		<s:select list="{10,20,50}" value="#pageResult.pageSize" name="qo.pageSize" cssClass="ui_select02"></s:select>
+		<s:select list="{5,10,20,50}" value="#pageResult.pageSize" name="qo.pageSize" cssClass="ui_select02"></s:select>
 		转到第<input type="text" name="qo.currentPage" value="${qo.currentPage}" class="ui_input_txt01" />页
 			 <input type="button" class="ui_input_btn01 page_btn" value="跳转"/>
 	</div>

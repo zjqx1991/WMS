@@ -74,7 +74,6 @@ public class EmployeeTest {
     @Test
     public void queryTest() {
         EmployeeQueryObject qo = new EmployeeQueryObject();
-
 //        qo.setDepartId(4L);
 //        qo.setKeyword("xuzhu");
         System.out.println("EmployeeTest.queryTest:==" + qo);
@@ -82,16 +81,6 @@ public class EmployeeTest {
 
         for (Employee emp : resultObject.getResultList()) {
             System.out.println("EmployeeTest.queryTest:==" + emp);
-        }
-    }
-
-
-    @Test
-    public void pageQueryTest() {
-        PageResultObject resultObject = this.employeeService.query(3, 5);
-        List<Employee> list = resultObject.getResultList();
-        for (Employee emp : list) {
-            System.out.println(emp);
         }
     }
 
