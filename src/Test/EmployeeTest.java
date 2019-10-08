@@ -1,6 +1,7 @@
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
+import com.revanwang.wms.query.PageResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import com.revanwang.wms.service.IEmployeeService;
 import org.junit.Test;
@@ -23,15 +24,17 @@ public class EmployeeTest {
 
     @Test
     public void saveTest() {
-        Department depart = this.departmentService.get(4L);
-        Employee emp = new Employee();
-        emp.setName("段誉");
-        emp.setAge(80);
-        emp.setEmail("duanyu@163.com");
-        emp.setPassword("duanyu");
-        emp.setDepartment(depart);
+        for (int i = 0; i < 20; i++) {
+            Department depart = this.departmentService.get(5L);
+            Employee emp = new Employee();
+            emp.setName("test__" + i);
+            emp.setAge(50 + i);
+            emp.setEmail("test_" + i + "@163.com");
+            emp.setPassword("test_" + i);
+            emp.setDepartment(depart);
 
-        this.employeeService.save(emp);
+            this.employeeService.save(emp);
+        }
     }
 
 
@@ -77,6 +80,16 @@ public class EmployeeTest {
 
         for (Employee emp : employeeList) {
             System.out.println("EmployeeTest.queryTest:==" + emp);
+        }
+    }
+
+
+    @Test
+    public void pageQueryTest() {
+        PageResultObject resultObject = this.employeeService.query(3, 5);
+        List<Employee> list = resultObject.getResultList();
+        for (Employee emp : list) {
+            System.out.println(emp);
         }
     }
 

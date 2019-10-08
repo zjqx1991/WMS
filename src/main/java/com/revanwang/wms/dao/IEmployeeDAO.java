@@ -3,6 +3,7 @@ package com.revanwang.wms.dao;
 
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
+import com.revanwang.wms.query.PageResultObject;
 
 import java.util.List;
 
@@ -14,5 +15,14 @@ public interface IEmployeeDAO extends IGenericDAO<Employee> {
      * @return
      */
     List<Employee> query(EmployeeQueryObject qo);
+
+
+    /**
+     * 分页查询
+     * @param currentPage   当前页
+     * @param pageSize      个数
+     * @return
+     */
+    PageResultObject query(Integer currentPage, Integer pageSize);
 
 }

@@ -7,14 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3b3654-976f-411c-b686-fc9054e2c393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/EmployeeQueryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/PageResultObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/EmployeeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IEmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/IEmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/dao/impl/EmployeeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/EmployeeQueryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/query/EmployeeQueryObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/IEmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revanwang/wms/web/action/EmployeeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/wms/WEB-INF/views/employee/list.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,17 +109,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeeTest.queryTest">
-    <configuration name="DepartmentTest.getListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WMS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DepartmentTest" />
-      <option name="METHOD_NAME" value="getListTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.Tomcat7">
     <configuration name="EmployeeTest.getDepartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WMS" />
       <option name="PACKAGE_NAME" value="" />
@@ -132,6 +125,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
       <option name="METHOD_NAME" value="getListTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.pageQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WMS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="METHOD_NAME" value="pageQueryTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -361,20 +364,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DepartmentTest.getListTest" />
       <item itemvalue="JUnit.EmployeeTest.getListTest" />
       <item itemvalue="JUnit.EmployeeTest.saveTest" />
       <item itemvalue="Tomcat Server.Tomcat7" />
       <item itemvalue="JUnit.EmployeeTest.getDepartTest" />
       <item itemvalue="JUnit.EmployeeTest.queryTest" />
+      <item itemvalue="JUnit.EmployeeTest.pageQueryTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EmployeeTest.queryTest" />
+        <item itemvalue="JUnit.EmployeeTest.pageQueryTest" />
         <item itemvalue="JUnit.EmployeeTest.saveTest" />
+        <item itemvalue="JUnit.EmployeeTest.queryTest" />
         <item itemvalue="JUnit.EmployeeTest.getListTest" />
         <item itemvalue="JUnit.EmployeeTest.getDepartTest" />
-        <item itemvalue="JUnit.DepartmentTest.getListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -394,7 +397,7 @@
       <workItem from="1570415244085" duration="251000" />
       <workItem from="1570415526328" duration="506000" />
       <workItem from="1570427372241" duration="721000" />
-      <workItem from="1570428119280" duration="23154000" />
+      <workItem from="1570428119280" duration="27212000" />
     </task>
     <servers />
   </component>

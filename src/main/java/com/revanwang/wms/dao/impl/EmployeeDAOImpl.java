@@ -3,6 +3,7 @@ package com.revanwang.wms.dao.impl;
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
+import com.revanwang.wms.query.PageResultObject;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -29,4 +30,25 @@ public class EmployeeDAOImpl
 
         return query.list();
     }
+
+
+    @Override
+    public PageResultObject query(Integer currentPage, Integer pageSize) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "SELECT COUNT(obj) FROM Employee obj";
+        Query query = session.createQuery(hql);
+        //1 count
+        Integer totalCount = ((Long) query.uniqueResult()).intValue();
+
+
+        //2 Result
+        hql = "SELECT obj FROM Employee obj";
+        query = session.createQuery(hql);
+        query.setFirstResult((currentPage - 1) * pageSize);
+        query.setMaxResults(pageSize);
+
+        return new PageResultObject(currentPage, pageSize, totalCount, query.list());
+    }
+
+
 }

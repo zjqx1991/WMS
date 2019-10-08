@@ -21,13 +21,13 @@
             });
             //翻页
             $(".btn_page").click(function () {
-                // $(":input[name='qo.currentPage']").val($(this).data("page") || $(":input[name='qo.currentPage']").val());
-                // $("#searchForm").submit();
+                $(":input[name='qo.currentPage']").val($(this).data("page") || $(":input[name='qo.currentPage']").val());
+                $("#searchForm").submit();
             });
             //每页多少条数据
-            // $(":input[name='qo.pageSize']").change(function(){
-            //     $("#searchForm").submit();
-            // });
+            $(":input[name='qo.pageSize']").change(function () {
+                $("#searchForm").submit();
+            });
         });
     </script>
 </head>
@@ -39,12 +39,12 @@
                 <div id="box_border">
                     <div id="box_top">搜索</div>
                     <div id="box_center">
-                        <%--                        姓名/邮箱--%>
-                        <%--                        <input name="qo.keyword" class="ui_input_txt02"/>--%>
-                        <%--                        所属部门--%>
-                        <%--                        <s:select list="#depts" name="qo.deptId"--%>
-                        <%--                                  headerKey="-1" headerValue="全部部门"--%>
-                        <%--                                  listKey="id" listValue="name" cssClass="ui_select01"/>--%>
+                        姓名/邮箱
+                        <s:textfield name="qo.keyword" cssClass="ui_input_txt02"/>
+                        所属部门
+                        <s:select list="#depts" name="qo.departId"
+                                  headerKey="-1" headerValue="全部部门"
+                                  listKey="id" listValue="name" cssClass="ui_select01"/>
                     </div>
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01 btn_page"/>

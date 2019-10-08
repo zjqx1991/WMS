@@ -31,7 +31,7 @@ public class EmployeeQueryObject {
             this.paramMap.put("email", keyString);
         }
 
-        if (this.departId != null) {
+        if (this.departId.intValue() > 0) {
             this.conditionList.add("obj.department.id = :departId");
             this.paramMap.put("departId", this.departId);
         }
@@ -66,5 +66,14 @@ public class EmployeeQueryObject {
 
     private boolean hasLength(String string) {
         return string != null && string.length() > 0 && !"".equals(string);
+    }
+
+
+    @Override
+    public String toString() {
+        return "EmployeeQueryObject{" +
+                "keyword='" + keyword + '\'' +
+                ", departId=" + departId +
+                '}';
     }
 }
