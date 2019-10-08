@@ -74,11 +74,13 @@ public class EmployeeTest {
     @Test
     public void queryTest() {
         EmployeeQueryObject qo = new EmployeeQueryObject();
-//        qo.setDepartId(4L);
-        qo.setKeyword("xuzhu");
-        List<Employee> employeeList = this.employeeService.query(qo);
 
-        for (Employee emp : employeeList) {
+//        qo.setDepartId(4L);
+//        qo.setKeyword("xuzhu");
+        System.out.println("EmployeeTest.queryTest:==" + qo);
+        PageResultObject resultObject = this.employeeService.query(qo);
+
+        for (Employee emp : resultObject.getResultList()) {
             System.out.println("EmployeeTest.queryTest:==" + emp);
         }
     }

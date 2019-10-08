@@ -12,6 +12,10 @@ public class EmployeeQueryObject {
     private String  keyword;
     @Setter @Getter
     private Long    departId;
+    @Setter @Getter
+    private Integer currentPage = 1;
+    @Setter @Getter
+    private Integer pageSize = 5;
 
     //查询条件
     private List<String> conditionList = new ArrayList<>();
@@ -31,7 +35,7 @@ public class EmployeeQueryObject {
             this.paramMap.put("email", keyString);
         }
 
-        if (this.departId.intValue() > 0) {
+        if (this.departId != null && this.departId.intValue() > 0) {
             this.conditionList.add("obj.department.id = :departId");
             this.paramMap.put("departId", this.departId);
         }
@@ -74,6 +78,8 @@ public class EmployeeQueryObject {
         return "EmployeeQueryObject{" +
                 "keyword='" + keyword + '\'' +
                 ", departId=" + departId +
+                ", currentPage=" + currentPage +
+                ", pageSize=" + pageSize +
                 '}';
     }
 }

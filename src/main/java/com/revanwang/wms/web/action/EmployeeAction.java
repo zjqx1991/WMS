@@ -3,6 +3,7 @@ package com.revanwang.wms.web.action;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
+import com.revanwang.wms.query.PageResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import com.revanwang.wms.service.IEmployeeService;
 import lombok.Getter;
@@ -21,9 +22,8 @@ public class EmployeeAction extends BaseAction {
 
     @Getter
     private Employee employee = new Employee();
-
     /**
-     * Query
+     * 高级查询 + 分页查询
      */
     @Getter
     private EmployeeQueryObject qo = new EmployeeQueryObject();
@@ -31,10 +31,9 @@ public class EmployeeAction extends BaseAction {
 
     @Override
     public String execute() throws Exception {
-        System.out.println("EmployeeAction.execute:==" + this.qo);
-        List<Employee> employees = this.employeeService.query(this.qo);
+        PageResultObject resultObject = this.employeeService.query(this.qo);
         List<Department> departments = this.departmentService.getList();
-        ActionContextPut("employees", employees);
+        ActionContextPut("pageResult", resultObject);
         ActionContextPut("depts", departments);
         return LIST;
     }

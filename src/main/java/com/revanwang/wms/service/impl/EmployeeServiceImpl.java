@@ -41,7 +41,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public List<Employee> query(EmployeeQueryObject qo) {
+    public PageResultObject query(EmployeeQueryObject qo) {
         return this.employeeDAO.query(qo);
     }
 

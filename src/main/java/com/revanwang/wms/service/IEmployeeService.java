@@ -41,11 +41,11 @@ public interface IEmployeeService {
 
 
     /**
-     * 高级查询
+     * 高级查询 + 分页查询
      * @param qo    查询对象
      * @return
      */
-    List<Employee> query(EmployeeQueryObject qo);
+    PageResultObject query(EmployeeQueryObject qo);
 
 
 
