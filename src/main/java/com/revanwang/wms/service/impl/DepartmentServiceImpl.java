@@ -2,6 +2,8 @@ package com.revanwang.wms.service.impl;
 
 import com.revanwang.wms.dao.IDepartmentDAO;
 import com.revanwang.wms.domain.Department;
+import com.revanwang.wms.query.DepartmentQueryObject;
+import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import lombok.Setter;
 
@@ -35,5 +37,10 @@ public class DepartmentServiceImpl implements IDepartmentService {
     @Override
     public List<Department> getList() {
         return this.departmentDAO.getList();
+    }
+
+    @Override
+    public QueryResultObject query(DepartmentQueryObject qo) {
+        return this.departmentDAO.query(qo);
     }
 }

@@ -1,8 +1,9 @@
 package com.revanwang.wms.dao.impl;
 
+import com.revanwang.utils.RevanMapUtils;
 import com.revanwang.wms.dao.IGenericDAO;
 import com.revanwang.wms.query.AbstractQueryObject;
-import com.revanwang.wms.query.PageResultObject;
+import com.revanwang.wms.query.QueryResultObject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -59,7 +60,7 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public PageResultObject query(AbstractQueryObject qo) {
+    public QueryResultObject query(AbstractQueryObject qo) {
 
         //每页个数
         Integer pageSize = qo.getPageSize();
@@ -98,7 +99,50 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         query.setFirstResult((currentPage - 1) * pageSize);
         query.setMaxResults(pageSize);
 
-        return new PageResultObject(currentPage, pageSize, totalCount, query.list());
+        return new QueryResultObject(currentPage, pageSize, totalCount, query.list());
+    }
+
+    @Override
+    public List<T> query(Integer currentPage, Integer pageSize, String condition, Object... args) {
+        //查询数据
+        StringBuilder dataSB = new StringBuilder(100);
+        dataSB.append("SELECT obj FROM ");
+        dataSB.append(this.targetClass.getSimpleName());
+        dataSB.append(" obj");
+
+        if (args != null && args.length != 0) {
+            dataSB.append(" WHERE ");
+            dataSB.append(condition);
+        }
+
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery(dataSB.toString());
+        //设置参数
+        if (condition.length() > 0 && args.length > 0) {
+            for (int i = 0; i < args.length; i++) {
+                Map<String, Object> map = (Map<String, Object>) args[i];
+                query.setParameter(RevanMapUtils.revan_getMapKey(map).toString(), RevanMapUtils.revan_getMapValue(map));
+            }
+        }
+
+        //设置返回结果
+        if (currentPage > 0 && pageSize > 0) {
+            query.setFirstResult((currentPage - 1) * pageSize);
+            query.setMaxResults(pageSize);
+        }
+
+        return query.list();
+    }
+
+    @Override
+    public List<T> query(String condition, Object... args) {
+        return query(-1, -1, condition, args);
+    }
+
+    @Override
+    public T queryObject(String condition, Object... args) {
+        List<T> list = query(condition, args);
+        return list.size() == 1 ? list.get(0) : null;
     }
 
 
@@ -108,9 +152,8 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
     private void setConditionParame(List paramList, Query query) {
         for (Object obj : paramList) {
             Map<String, Object> map = (Map<String, Object>) obj;
-            for (Map.Entry entry : map.entrySet()) {
-                query.setParameter(entry.getKey().toString(), entry.getValue());
-            }
+            query.setParameter(RevanMapUtils.revan_getMapKey(map).toString(),
+                    RevanMapUtils.revan_getMapValue(map));
         }
     }
 }

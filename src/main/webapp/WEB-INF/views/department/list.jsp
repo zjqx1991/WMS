@@ -48,7 +48,7 @@
                     </tr>
                     <tbody>
 
-                    <s:iterator value="#department">
+                    <s:iterator value="#pageResult.resultList">
                         <tr>
                             <td><input type="checkbox" name="IDCheck" class="acb"/></td>
                             <td><s:property value="id"/></td>

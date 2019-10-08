@@ -1,11 +1,11 @@
 package com.revanwang.wms.web.action;
 
 import com.revanwang.wms.domain.Department;
+import com.revanwang.wms.query.DepartmentQueryObject;
+import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 public class DepartmentAction extends BaseAction {
 
@@ -14,11 +14,14 @@ public class DepartmentAction extends BaseAction {
     @Getter
     private Department department = new Department();
 
+    @Getter
+    private DepartmentQueryObject qo = new DepartmentQueryObject();
+
     @Override
     public String execute() throws Exception {
         System.out.println("DepartmentAction.execute");
-        List<Department> departmentList = this.departmentService.getList();
-        ActionContextPut("department", departmentList);
+        QueryResultObject resultObject = this.departmentService.query(qo);
+        ActionContextPut("pageResult", resultObject);
         return LIST;
     }
 

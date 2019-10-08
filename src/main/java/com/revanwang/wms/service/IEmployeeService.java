@@ -3,7 +3,7 @@ package com.revanwang.wms.service;
 
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
-import com.revanwang.wms.query.PageResultObject;
+import com.revanwang.wms.query.QueryResultObject;
 
 import java.util.List;
 
@@ -45,6 +45,33 @@ public interface IEmployeeService {
      * @param qo    查询对象
      * @return
      */
-    PageResultObject query(EmployeeQueryObject qo);
+    QueryResultObject query(EmployeeQueryObject qo);
 
+
+
+    /**
+     * 查询条件
+     * @param currentPage   当前页
+     * @param pageSize      每页个数
+     * @param condition     查询条件
+     * @param args          参数值
+     * @return
+     */
+    List<Employee> query(Integer currentPage, Integer pageSize, String condition, Object...args);
+
+    /**
+     * 查询条件
+     * @param condition     查询条件
+     * @param args          参数值
+     * @return
+     */
+    List<Employee> query(String condition, Object...args);
+
+    /**
+     * 查询对象
+     * @param condition
+     * @param args
+     * @return
+     */
+    Employee queryObject(String condition, Object...args);
 }

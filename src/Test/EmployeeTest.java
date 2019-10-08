@@ -1,7 +1,8 @@
+import com.revanwang.utils.RevanMapUtils;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
-import com.revanwang.wms.query.PageResultObject;
+import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import com.revanwang.wms.service.IEmployeeService;
 import org.junit.Test;
@@ -10,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -77,11 +80,38 @@ public class EmployeeTest {
 //        qo.setDepartId(4L);
 //        qo.setKeyword("xuzhu");
         System.out.println("EmployeeTest.queryTest:==" + qo);
-        PageResultObject resultObject = this.employeeService.query(qo);
+        QueryResultObject resultObject = this.employeeService.query(qo);
 
         for (Employee emp : resultObject.getResultList()) {
             System.out.println("EmployeeTest.queryTest:==" + emp);
         }
     }
 
+
+    @Test
+    public void queryListTest() {
+        List<Employee> list = this.employeeService.query(1, 30,
+                "(obj.name LIKE :name or obj.email LIKE :email) and obj.department.id = :departId",
+                RevanMapUtils.revan_createMapObject("name", "%test%"),
+                RevanMapUtils.revan_createMapObject("email"," %test%"),
+                RevanMapUtils.revan_createMapObject("departId", 1L));
+        System.out.println("EmployeeTest.queryListTest:======" + list.size());
+    }
+
+
+    @Test
+    public void queryList1Test() {
+        List<Employee> list = this.employeeService.query("(obj.name LIKE :name or obj.email LIKE :email)",
+                RevanMapUtils.revan_createMapObject("name", "%test%"),
+                RevanMapUtils.revan_createMapObject("email"," %test%"));
+        System.out.println("EmployeeTest.queryListTest:======" + list.size());
+    }
+
+
+    @Test
+    public void queryObjectTestt() {
+        Employee employee = this.employeeService.queryObject("obj.id = :empId",
+                RevanMapUtils.revan_createMapObject("empId",1L));
+        System.out.println("EmployeeTest.queryObjectTestt:=== " + employee);
+    }
 }

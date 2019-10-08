@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Setter
 @Getter
-public class PageResultObject {
+public class QueryResultObject {
     private Integer currentPage;            //当前页
     private Integer pageSize;               //每页个数
     private Integer totalCount;             //总个数
@@ -22,7 +22,7 @@ public class PageResultObject {
     private Integer prevPage;               //上一页
     private Integer nextPage;               //下一页
 
-    public PageResultObject(Integer currentPage, Integer pageSize, Integer totalCount, List<Employee> resultList) {
+    public QueryResultObject(Integer currentPage, Integer pageSize, Integer totalCount, List<Employee> resultList) {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
         this.totalCount = totalCount;

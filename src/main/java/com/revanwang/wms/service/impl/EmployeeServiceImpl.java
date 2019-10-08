@@ -3,7 +3,7 @@ package com.revanwang.wms.service.impl;
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
-import com.revanwang.wms.query.PageResultObject;
+import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IEmployeeService;
 import lombok.Setter;
 
@@ -41,8 +41,23 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public PageResultObject query(EmployeeQueryObject qo) {
+    public QueryResultObject query(EmployeeQueryObject qo) {
         return this.employeeDAO.query(qo);
+    }
+
+    @Override
+    public List<Employee> query(Integer currentPage, Integer pageSize, String condition, Object... args) {
+        return this.employeeDAO.query(currentPage, pageSize, condition, args);
+    }
+
+    @Override
+    public List<Employee> query(String condition, Object... args) {
+        return this.employeeDAO.query(condition, args);
+    }
+
+    @Override
+    public Employee queryObject(String condition, Object... args) {
+        return this.employeeDAO.queryObject(condition, args);
     }
 
 }

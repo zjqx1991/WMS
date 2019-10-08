@@ -1,6 +1,8 @@
 package com.revanwang.wms.service;
 
 import com.revanwang.wms.domain.Department;
+import com.revanwang.wms.query.DepartmentQueryObject;
+import com.revanwang.wms.query.QueryResultObject;
 
 import java.util.List;
 
@@ -35,4 +37,11 @@ public interface IDepartmentService {
      * @return 返回所有的部门
      */
     List<Department> getList();
+
+    /**
+     * 高级查询 + 分页查询
+     * @param qo    查询对象
+     * @return
+     */
+    QueryResultObject query(DepartmentQueryObject qo);
 }

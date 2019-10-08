@@ -1,7 +1,7 @@
 package com.revanwang.wms.dao;
 
 import com.revanwang.wms.query.AbstractQueryObject;
-import com.revanwang.wms.query.PageResultObject;
+import com.revanwang.wms.query.QueryResultObject;
 
 import java.util.List;
 
@@ -42,5 +42,32 @@ public interface IGenericDAO<T> {
      * @param qo    查询对象
      * @return
      */
-    PageResultObject query(AbstractQueryObject qo);
+    QueryResultObject query(AbstractQueryObject qo);
+
+    /**
+     * 查询条件
+     * @param currentPage   当前页
+     * @param pageSize      每页个数
+     * @param condition     查询条件
+     * @param args          参数值
+     * @return
+     */
+    List<T> query(Integer currentPage, Integer pageSize, String condition, Object...args);
+
+    /**
+     * 查询条件
+     * @param condition     查询条件
+     * @param args          参数值
+     * @return
+     */
+    List<T> query(String condition, Object...args);
+
+    /**
+     * 查询对象
+     * @param condition
+     * @param args
+     * @return
+     */
+    T queryObject(String condition, Object...args);
+
 }
