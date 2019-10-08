@@ -1,5 +1,6 @@
 package com.revanwang.wms.web.action;
 
+import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.query.EmployeeQueryObject;
@@ -67,6 +68,7 @@ public class EmployeeAction extends BaseAction {
     }
 
 
+    @RequiredPermission("删除员工")
     public String delete() {
         Long employeeId = this.employee.getId();
         if (employeeId != null) {
@@ -87,6 +89,11 @@ public class EmployeeAction extends BaseAction {
             //获取数据库数据
             this.employee = this.employeeService.get(empId);
         }
+        /**
+         * 修改用户的部门时，报错
+         * 清除一级缓存
+         */
+        this.employee.setDepartment(null);
     }
 
 }

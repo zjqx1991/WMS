@@ -5,13 +5,19 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.revanwang.wms.domain">
 
-    <class name="Department" table="t_department">
+    <class name="Role" table="t_role">
         <id name="id">
             <generator class="native"></generator>
         </id>
 
         <property name="name"/>
         <property name="sn"/>
+
+        <!-- 角色所拥有权限 -->
+        <bag name="permissions" table="t_role_permission">
+            <key column="role_id"></key>
+            <many-to-many class="Permission" column="permission_id"/>
+        </bag>
     </class>
 
 </hibernate-mapping>

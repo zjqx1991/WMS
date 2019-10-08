@@ -24,5 +24,10 @@
         <property name="employeeDAO" ref="employeeDAO"/>
     </bean>
 
+    <!--  permissService  -->
+    <bean id="permissService" class="com.revanwang.wms.service.impl.PermissServiceImpl">
+        <property name="permissionDAO" ref="permissionDAO"/>
+    </bean>
+
 </beans>
 
