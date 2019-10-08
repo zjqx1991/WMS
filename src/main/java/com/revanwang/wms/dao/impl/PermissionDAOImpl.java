@@ -6,4 +6,5 @@ import com.revanwang.wms.domain.Permission;
 public class PermissionDAOImpl
         extends GenericDAOImpl<Permission>
         implements IPermissionDAO {
+
 }

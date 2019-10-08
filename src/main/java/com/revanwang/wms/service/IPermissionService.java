@@ -6,25 +6,18 @@ import com.revanwang.wms.query.QueryResultObject;
 
 import java.util.List;
 
-public interface IPermissService {
+public interface IPermissionService {
 
     /**
-     * 保存权限
-     * @param permission    权限
+     * 加载权限
      */
-    void save(Permission permission);
+    void reload();
 
     /**
      * 删除权限
      * @param id    权限id
      */
     void delete(Long id);
-
-    /**
-     * 更新权限信息
-     * @param permission    权限
-     */
-    void update(Permission permission);
 
     /**
      * 查询权限
