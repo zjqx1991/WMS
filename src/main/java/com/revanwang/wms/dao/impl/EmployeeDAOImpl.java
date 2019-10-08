@@ -7,6 +7,7 @@ import com.revanwang.wms.query.PageResultObject;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeDAOImpl
@@ -15,13 +16,18 @@ public class EmployeeDAOImpl
 
     @Override
     public PageResultObject query(EmployeeQueryObject qo) {
+
+        qo.getQueryCondition();
+        qo.getQueryCondition();
+        qo.getQueryCondition();
+
         //每页个数
         Integer pageSize = qo.getPageSize();
         //当前页
         Integer currentPage = qo.getCurrentPage();
 
         //拼接查询参数
-        Map<String, Object> paramMap = qo.getQueryParams();
+        List paramList = qo.getQueryParams();
 
         //1、COUNT
         Session session = sessionFactory.getCurrentSession();
@@ -33,12 +39,9 @@ public class EmployeeDAOImpl
         //查询总个数
         Query query = session.createQuery(countSB.toString());
         //设置参数
-        for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
-            query.setParameter(entry.getKey(), entry.getValue());
-        }
+        setConditionParame(paramList, query);
         //查询总个数
         Integer totalCount = ((Long) query.uniqueResult()).intValue();
-
 
         //查询数据
         StringBuilder dataSB = new StringBuilder(100);
@@ -46,14 +49,25 @@ public class EmployeeDAOImpl
         dataSB.append(qo.getQueryCondition());
         query = session.createQuery(dataSB.toString());
         //设置参数
-        for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
-            query.setParameter(entry.getKey(), entry.getValue());
-        }
+        setConditionParame(paramList, query);
         //设置返回结果
         query.setFirstResult((currentPage - 1) * pageSize);
         query.setMaxResults(pageSize);
 
         return new PageResultObject(currentPage, pageSize, totalCount, query.list());
+    }
+
+
+    /**
+     * 给请求参数设置
+     */
+    private void setConditionParame(List paramList, Query query) {
+        for (Object obj : paramList) {
+            Map<String, Object> map = (Map<String, Object>) obj;
+            for (Map.Entry entry : map.entrySet()) {
+                query.setParameter(entry.getKey().toString(), entry.getValue());
+            }
+        }
     }
 
 

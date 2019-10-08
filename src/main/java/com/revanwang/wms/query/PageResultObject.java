@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * 查询结果对象
+ */
 @Setter
 @Getter
 public class PageResultObject {
