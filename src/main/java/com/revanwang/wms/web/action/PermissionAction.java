@@ -27,14 +27,14 @@ public class PermissionAction extends BaseAction {
     }
 
 
-    @RequiredPermission("加载权限")
+    @RequiredPermission("权限加载")
     public String reload() {
         System.out.println("PermissionAction.reload");
         this.permissionService.reload();
         return NONE;
     }
 
-    @RequiredPermission("删除权限")
+    @RequiredPermission("权限删除")
     public String delete() {
         this.permissionService.delete(this.permission.getId());
         return SUCCESS;

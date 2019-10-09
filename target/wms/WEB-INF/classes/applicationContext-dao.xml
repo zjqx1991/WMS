@@ -27,5 +27,8 @@
 
     <!--  permissionDAO  -->
     <bean id="permissionDAO" class="com.revanwang.wms.dao.impl.PermissionDAOImpl" parent="baseDAO"/>
+
+    <!--  roleDAO  -->
+    <bean id="roleDAO" class="com.revanwang.wms.dao.impl.RoleDAOImpl" parent="baseDAO"/>
 </beans>
 

@@ -29,7 +29,7 @@ public class DepartmentAction extends BaseAction {
 
 
     @Override
-    @RequiredPermission("编辑部门")
+    @RequiredPermission("部门编辑")
     public String input() throws Exception {
         Long departId = this.department.getId();
         if (departId != null) {
@@ -47,7 +47,7 @@ public class DepartmentAction extends BaseAction {
     /**
      * 保存和更新
      */
-    @RequiredPermission("保存或更新部门")
+    @RequiredPermission("部门保存或更新")
     public String saveOrUpdate() {
         Long departId = this.department.getId();
         if (departId == null) {
@@ -61,7 +61,7 @@ public class DepartmentAction extends BaseAction {
         return SUCCESS;
     }
 
-    @RequiredPermission("删除部门")
+    @RequiredPermission("部门删除")
     public String delete() {
         Long departId = this.department.getId();
         if (departId != null) {

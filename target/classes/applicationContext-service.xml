@@ -29,5 +29,9 @@
         <property name="permissionDAO" ref="permissionDAO"/>
     </bean>
 
+    <!--  roleService  -->
+    <bean id="roleService" class="com.revanwang.wms.service.impl.RoleServiceImpl">
+        <property name="roleDAO" ref="roleDAO"/>
+    </bean>
 </beans>
 

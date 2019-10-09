@@ -17,4 +17,14 @@ public class Role extends BaseDomain {
 
     //角色所拥有权限
     private List<Permission>    permissions = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "name='" + name + '\'' +
+                ", sn='" + sn + '\'' +
+                ", permissions=" + permissions +
+                ", id=" + id +
+                '}';
+    }
 }
