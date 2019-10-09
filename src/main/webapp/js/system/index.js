@@ -22,10 +22,10 @@ function loadMenu(resourceType, treeObj){
 	menus={
 			"business":[{"isParent":true,"name":"业务模块","sn":"business"}],
 			"systemManage":[{"id":1,"pId":0,"name":"系统管理"},
-			                {"id":2,"pId":1,"name":"员工管理","path":"/employee_list.action"},
-			                {"id":3,"pId":1,"name":"部门管理","path":"/department_list.action"},
-			                {"id":4,"pId":1,"name":"权限管理","path":"/permission_list.action"},
-			                {"id":5,"pId":1,"name":"角色管理","path":"/role_list.action"}],
+			                {"id":2,"pId":1,"name":"员工管理","path":"/employee.action"},
+			                {"id":3,"pId":1,"name":"部门管理","path":"/department.action"},
+			                {"id":4,"pId":1,"name":"权限管理","path":"/permission.action"},
+			                {"id":5,"pId":1,"name":"角色管理","path":"/role.action"}],
 			"charts":[{"isParent":true,"name":"报表","sn":"charts"}]
 	};
     // 将返回的数据赋给zTree
