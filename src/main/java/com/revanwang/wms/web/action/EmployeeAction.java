@@ -3,10 +3,12 @@ package com.revanwang.wms.web.action;
 import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Department;
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.domain.Role;
 import com.revanwang.wms.query.EmployeeQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IDepartmentService;
 import com.revanwang.wms.service.IEmployeeService;
+import com.revanwang.wms.service.IRoleService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,10 +18,13 @@ public class EmployeeAction extends BaseAction {
 
 
     @Setter
-    private IEmployeeService employeeService;
+    private IEmployeeService employeeService;           //员工
 
     @Setter
-    private IDepartmentService departmentService;
+    private IDepartmentService departmentService;       //部门
+
+    @Setter
+    private IRoleService roleService;                   //角色
 
     @Getter
     private Employee employee = new Employee();
@@ -43,8 +48,13 @@ public class EmployeeAction extends BaseAction {
     @Override
     @RequiredPermission("员工编辑")
     public String input() throws Exception {
+        //获取所有部门
         List<Department> departments = this.departmentService.getList();
         ActionContextPut("depts", departments);
+
+        //获取所有角色
+        List<Role> roles = this.roleService.getList();
+        ActionContextPut("roles", roles);
 
         Long employeeId = this.employee.getId();
         if (employeeId != null) {

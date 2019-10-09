@@ -25,4 +25,29 @@ public class Employee extends BaseDomain {
     private List<Role> roles = new ArrayList<>();
     private Department  department;         //员工所属部门
 
+
+    /**
+     * 定义一个属性获取用户的角色名称
+     * @return
+     */
+    public String getRoleName() {
+        if (this.admin) {
+            return "[超级管理员]";
+        }
+
+        if (this.roles.size() == 0) {
+            return "暂未配置角色";
+        }
+
+        StringBuilder sb = new StringBuilder(50);
+        sb.append("[ ");
+        for (Role role : roles) {
+            sb.append(role.getName());
+            sb.append(" ,");
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(" ]");
+        System.out.println("Employee.getRoleName:===" + sb.toString());
+        return sb.toString();
+    }
 }

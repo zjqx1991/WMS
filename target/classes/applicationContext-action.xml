@@ -27,6 +27,7 @@
     <bean id="employeeAction" class="com.revanwang.wms.web.action.EmployeeAction" scope="prototype">
         <property name="employeeService" ref="employeeService"/>
         <property name="departmentService" ref="departmentService"/>
+        <property name="roleService" ref="roleService"/>
     </bean>
 
 

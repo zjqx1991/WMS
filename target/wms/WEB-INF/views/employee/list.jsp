@@ -65,7 +65,8 @@
                         <th>EMAIL</th>
                         <th>年龄</th>
                         <th>所属部门</th>
-                        <!-- <th>角色</th> -->
+                        <th>角色</th>
+                        <th>操作</th>
                         <th></th>
                     </tr>
                     <tbody>
@@ -77,6 +78,7 @@
                             <td><s:property value="email"/></td>
                             <td><s:property value="age"/></td>
                             <td><s:property value="department.name"/></td>
+                            <td><s:property value="roleName"/></td>
                             <td>
                                 <s:a namespace="/" action="employee_input"><s:param name="employee.id"
                                                                                     value="id"/>编辑</s:a>
