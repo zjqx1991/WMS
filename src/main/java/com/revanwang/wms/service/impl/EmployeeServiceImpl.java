@@ -1,7 +1,7 @@
 package com.revanwang.wms.service.impl;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.revanwang.utils.MD5;
+import com.revanwang.utils.RevanContext;
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.domain.Permission;
@@ -79,7 +79,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
 
         //2、把用户存储到session
-        ActionContext.getContext().getSession().put("user_in_session", employee);
+        RevanContext.revan_setCurrentSessionObject(employee);
 
         //3、把用户的权限存储到session
         if (!employee.isAdmin()) {
@@ -93,7 +93,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
                     permissionSet.add(p.getExpression());
                 }
             }
-            ActionContext.getContext().getSession().put("permission_in_session", permissionSet);
+            RevanContext.revan_setCurrentPermission(permissionSet);
         }
     }
 

@@ -2,6 +2,7 @@ package com.revanwang.wms.web.interceptor;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import com.revanwang.utils.RevanContext;
 import com.revanwang.utils.RevanPermissionUtils;
 import com.revanwang.wms.annotation.RequiredPermission;
 import com.revanwang.wms.domain.Employee;
@@ -9,11 +10,13 @@ import com.revanwang.wms.domain.Employee;
 import java.lang.reflect.Method;
 import java.util.Set;
 
+/**
+ * 权限拦截器
+ */
 public class SecurityInterceptor extends AbstractInterceptor {
     @Override
     public String intercept(ActionInvocation actionInvocation) throws Exception {
-
-        Employee employee = (Employee) actionInvocation.getInvocationContext().getSession().get("user_in_session");
+        Employee employee = (Employee) RevanContext.revan_getCurrentSession();
         //1: 如果是超级管理员，则直接放行
         if (employee.isAdmin()) {
             return actionInvocation.invoke();
@@ -33,11 +36,10 @@ public class SecurityInterceptor extends AbstractInterceptor {
         String exp = RevanPermissionUtils.buildExpression(actionMethod);
 
         //4: 获取当前用户所有权限，如果拥有该权限则放行
-        Set<String> permissionSet = (Set<String>) actionInvocation.getInvocationContext().getSession().get("permission_in_session");
+        Set<String> permissionSet = RevanContext.revan_getCurrentPermission();
         if (permissionSet.contains(exp)) {
             return actionInvocation.invoke();
         }
-        System.out.println("SecurityInterceptor.intercept:==" + "nopermission");
         return "nopermission";
     }
 }
