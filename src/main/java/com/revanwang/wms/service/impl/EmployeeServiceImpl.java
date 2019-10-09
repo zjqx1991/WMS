@@ -1,6 +1,7 @@
 package com.revanwang.wms.service.impl;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.revanwang.utils.MD5;
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
 import com.revanwang.wms.domain.Permission;
@@ -22,6 +23,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void save(Employee employee) {
+        //用户密码加密
+        employee.setPassword(MD5.encode(employee.getPassword()));
         this.employeeDAO.save(employee);
     }
 
@@ -68,7 +71,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public void login(String username, String password) {
         //1、查询数据库
-        Employee employee = this.employeeDAO.checkLogin(username, password);
+        Employee employee = this.employeeDAO.checkLogin(username, MD5.encode(password));
 
         System.out.println("username_password:==" + employee);
         if (employee == null) {
