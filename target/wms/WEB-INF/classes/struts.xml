@@ -10,19 +10,32 @@
     <constant name="struts.ui.theme" value="simple"></constant>
 
     <package name="default" namespace="/" extends="struts-default">
-        <!--拦截器栈
-            在执行prepare拦截器前执行params拦截器
-        -->
-        <default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+        <!--自定义拦截器-->
+        <interceptors>
+            <interceptor name="checkLogin"
+                         class="com.revanwang.wms.web.interceptor.CheckLoginInterceptor"></interceptor>
+            <!--自定义拦截器栈-->
+            <interceptor-stack name="wmsStack">
+                <!--拦截器栈
+                    在执行prepare拦截器前执行params拦截器
+                -->
+                <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+                <interceptor-ref name="checkLogin"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+
+        <default-interceptor-ref name="wmsStack"></default-interceptor-ref>
         <!--通配符-->
         <global-allowed-methods>regex:.*</global-allowed-methods>
 
         <!--登录-->
         <action name="login" class="loginAction">
+            <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
             <result name="success">/WEB-INF/views/main.jsp</result>
             <result name="login">/login.jsp</result>
         </action>
-        
+
         <!--增删改查-->
         <action name="*_*" class="{1}Action" method="{2}">
             <result name="list">/WEB-INF/views/{1}/list.jsp</result>
