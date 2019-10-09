@@ -10,7 +10,7 @@
     <constant name="struts.ui.theme" value="simple"></constant>
 
     <package name="default" namespace="/" extends="struts-default">
-        <!--自定义拦截器-->
+<!--1、自定义拦截器-->
         <interceptors>
             <interceptor name="checkLogin"
                          class="com.revanwang.wms.web.interceptor.CheckLoginInterceptor"></interceptor>
@@ -23,17 +23,22 @@
                 <interceptor-ref name="checkLogin"></interceptor-ref>
             </interceptor-stack>
         </interceptors>
-
-
         <default-interceptor-ref name="wmsStack"></default-interceptor-ref>
-        <!--通配符-->
+
+
+<!--2、全局视图-->
+        <global-results>
+            <result name="login">/login.jsp</result>
+        </global-results>
+
+<!--3、通配符-->
         <global-allowed-methods>regex:.*</global-allowed-methods>
 
+<!--4、Action-->
         <!--登录-->
         <action name="login" class="loginAction">
             <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
             <result name="success">/WEB-INF/views/main.jsp</result>
-            <result name="login">/login.jsp</result>
         </action>
 
         <!--增删改查-->
