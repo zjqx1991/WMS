@@ -17,6 +17,13 @@
         <!--通配符-->
         <global-allowed-methods>regex:.*</global-allowed-methods>
 
+        <!--登录-->
+        <action name="login" class="loginAction">
+            <result name="success">/WEB-INF/views/main.jsp</result>
+            <result name="login">/login.jsp</result>
+        </action>
+        
+        <!--增删改查-->
         <action name="*_*" class="{1}Action" method="{2}">
             <result name="list">/WEB-INF/views/{1}/list.jsp</result>
             <result name="success" type="redirectAction">{1}</result>

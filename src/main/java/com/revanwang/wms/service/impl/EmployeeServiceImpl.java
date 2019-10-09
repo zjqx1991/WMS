@@ -1,13 +1,18 @@
 package com.revanwang.wms.service.impl;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.revanwang.wms.dao.IEmployeeDAO;
 import com.revanwang.wms.domain.Employee;
+import com.revanwang.wms.domain.Permission;
+import com.revanwang.wms.domain.Role;
 import com.revanwang.wms.query.EmployeeQueryObject;
 import com.revanwang.wms.query.QueryResultObject;
 import com.revanwang.wms.service.IEmployeeService;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class EmployeeServiceImpl implements IEmployeeService {
 
@@ -58,6 +63,35 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public Employee queryObject(String condition, Object... args) {
         return this.employeeDAO.queryObject(condition, args);
+    }
+
+    @Override
+    public void login(String username, String password) {
+        //1、查询数据库
+        Employee employee = this.employeeDAO.checkLogin(username, password);
+
+        System.out.println("username_password:==" + employee);
+        if (employee == null) {
+            throw new RuntimeException("亲，用户名或密码名错误");
+        }
+
+        //2、把用户存储到session
+        ActionContext.getContext().getSession().put("user_in_session", employee);
+
+        //3、把用户的权限存储到session
+        if (!employee.isAdmin()) {
+            //用户所拥有的权限
+            Set<String> permissionSet = new HashSet<>();
+            //获取角色
+            List<Role> roleList = employee.getRoles();
+            for (Role role : roleList) {
+                List<Permission> permissionList = role.getPermissions();
+                for (Permission p : permissionList) {
+                    permissionSet.add(p.getExpression());
+                }
+            }
+            ActionContext.getContext().getSession().put("permission_in_session", permissionSet);
+        }
     }
 
 }

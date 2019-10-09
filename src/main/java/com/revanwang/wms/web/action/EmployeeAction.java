@@ -106,6 +106,7 @@ public class EmployeeAction extends BaseAction {
          * 清除一级缓存
          */
         this.employee.setDepartment(null);
+        this.employee.setRoles(null);
     }
 
 }

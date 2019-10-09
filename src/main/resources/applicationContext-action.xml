@@ -43,5 +43,11 @@
         <property name="permissionService" ref="permissService"/>
     </bean>
 
+
+    <!--  loginAction  -->
+    <bean id="loginAction" class="com.revanwang.wms.web.action.LoginAction" scope="prototype">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
 </beans>
 
