@@ -12,7 +12,6 @@ public class CheckLoginInterceptor extends AbstractInterceptor {
     @Override
     public String intercept(ActionInvocation actionInvocation) throws Exception {
         Employee emp = (Employee) actionInvocation.getInvocationContext().getSession().get("user_in_session");
-        System.out.println("CheckLoginInterceptor.intercept:==" + emp);
         if (null == emp) {
             return Action.LOGIN;
         }

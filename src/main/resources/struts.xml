@@ -14,13 +14,15 @@
         <interceptors>
             <interceptor name="checkLogin"
                          class="com.revanwang.wms.web.interceptor.CheckLoginInterceptor"></interceptor>
+            <interceptor name="security" class="com.revanwang.wms.web.interceptor.SecurityInterceptor"></interceptor>
             <!--自定义拦截器栈-->
             <interceptor-stack name="wmsStack">
                 <!--拦截器栈
                     在执行prepare拦截器前执行params拦截器
                 -->
-                <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
                 <interceptor-ref name="checkLogin"></interceptor-ref>
+                <interceptor-ref name="security"></interceptor-ref>
+                <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
             </interceptor-stack>
         </interceptors>
         <default-interceptor-ref name="wmsStack"></default-interceptor-ref>
@@ -28,7 +30,8 @@
 
 <!--2、全局视图-->
         <global-results>
-            <result name="login">/login.jsp</result>
+            <result name="login" type="redirect">/login.jsp</result>
+            <result name="nopermission" >/WEB-INF/views/common/nopermission.jsp</result>
         </global-results>
 
 <!--3、通配符-->
@@ -38,7 +41,7 @@
         <!--登录-->
         <action name="login" class="loginAction">
             <interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
-            <result name="success">/WEB-INF/views/main.jsp</result>
+            <result name="success" >/WEB-INF/views/main.jsp</result>
         </action>
 
         <!--增删改查-->
